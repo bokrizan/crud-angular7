@@ -1,3 +1,6 @@
+## Autor: Božidar Križan
+
+
 ## Upute:
 
 Nakon downloada projekta, potrebno se prebaciti u radni folder te kroz konzolu izvršiti
