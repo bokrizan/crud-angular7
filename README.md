@@ -9,15 +9,15 @@ npm instal
 Nakon toga pokrenuti ng serve za dev server, te u browseru otici na `http://localhost:4200/`
 
 
-### napomena: potrebno imati instaliran  Angular CLI.
-npm install -g @angular/cli
+## napomena: potrebno imati instaliran  Angular CLI.
+`npm install -g @angular/cli`
 
 Ukoliko je instaliran, a postoji problem sa pokretanjem 
 izvršiti sljedeće:
 
-npm uninstall -g angular-cli @angular/cli
-npm cache clean -f
-npm install -g @angular/cli
+`npm uninstall -g angular-cli @angular/cli`
+`npm cache clean -f`
+`npm install -g @angular/cli`
 
 ----------------------------------------------------------------------------------------------
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
