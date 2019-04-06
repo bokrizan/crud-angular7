@@ -1,0 +1,42 @@
+<div class="”container”">
+  <div class="reglist">
+    <table datatable="ng" [dtOptions]="dtOptions" class="table table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Id</th>
+          <th>Task Name</th>
+          <th>Task Description</th>
+          <th>Task created</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks; let i = index">
+          <td><input type="checkbox" (change)="getCheckedItem(i)" /></td>
+          <!-- <td scope="row">{{ i }}</td> -->
+          <td>{{ task.task_id }}</td>
+          <td>{{ task.task_name }}</td>
+          <td>{{ task.task_desc }}</td>
+          <td>{{ task.task_created | date: "short" }}</td>
+          <td>
+            <button type="button" class="btn btn-info" (click)="setTasksToLocalStorage()" [routerLink]="['/edit', task.task_id]">Edit</button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn-group btn-group-toggle">
+      <div class="text-left">
+        <button class="btn btn-primary rounded mx-1" (click)="openFormModal()">Add new task</button>
+        <button type="submit" class="btn btn-danger rounded mx-1" (click)="deleteCheckedItem(i)">Delete</button>
+      </div>
+    </div>
+    <div class="text-right">
+      <button type="submit" class="btn btn-sm btn-secondary" (click)="clearLocalStorage()">Clear local storage</button>
+    </div>
+  </div>
+</div>

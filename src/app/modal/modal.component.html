@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add task</h4>
+
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">X</button>
+</div>
+
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <div class="modal-boy">
+    <div class="container">
+      <div class="form-group">
+        <label for="taskName">Task name</label>
+        <input type="text" class="form-control" formControlName="task_name" />
+      </div>
+
+      <!-- Field -->
+      <div class="form-group">
+        <label for="taskDesc">Task description</label>
+        <textarea type="text" class="form-control" rows="3" formControlName="task_desc"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" [disabled]="!myForm.valid">
+      Submit
+    </button>
+    <button type="button" class="btn btn-danger" (click)="activeModal.dismiss('Close clicked')">
+      Cancel
+    </button>
+  </div>
+</form>

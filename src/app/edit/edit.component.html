@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">Showing details for task with ID: {{ id }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ taskovi.task_name }}</h5>
+      <p class="card-text">{{ taskovi.task_desc }}</p>
+      <button type="button" class="btn btn-primary" (click)="openEditModal()">Edit</button>
+    </div>
+    <div class="card-footer text-muted">{{ taskovi.task_created | date: "full" }}<br /></div>
+  </div>
+  <br />
+  <div class="pull-left">
+    <button type="button" class="btn btn-info rounded mx-1" (click)="clearLocalStorage()" [routerLink]="['/tasks']">Back</button>
+    <button type="submit" class="btn btn-danger rounded mx-1" (click)="onDelete()">Delete</button>
+  </div>
+</div>
